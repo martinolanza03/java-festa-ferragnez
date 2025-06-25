@@ -17,16 +17,30 @@ public class CheckGuest {
         System.out.println("Il nome inserito è : " + formattedName);
 
         boolean isOnTheList = false;
+        int i = 0;
 
-        for (int i = 0; i < guestList.length; i++) {
-
+        while (!isOnTheList && i < guestList.length) {
             String guestListSelected = guestList[i].toLowerCase().replaceAll("\\s", "").replace("-", "");
 
             if (formattedName.equals(guestListSelected)) {
                 isOnTheList = true;
-                break;
             }
+
+            i++;
         }
+
+        /*
+         * for (int i = 0; i < guestList.length; i++) {
+         * 
+         * String guestListSelected = guestList[i].toLowerCase().replaceAll("\\s",
+         * "").replace("-", "");
+         * 
+         * if (formattedName.equals(guestListSelected)) {
+         * isOnTheList = true;
+         * break;
+         * }
+         * }
+         */
 
         if (isOnTheList) {
             System.out.println(name + " sei nella lista degli invitati");
